@@ -7,7 +7,7 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     ('Bjørn Rustad', 'bjorn@rustad.me'),
 )
-
+LOGIN_URL = 'login/'
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'core',
     'landingpage',
+    'flort',
 )
 
 # A sample logging configuration. The only tangible logging
