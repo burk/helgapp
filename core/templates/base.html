@@ -18,58 +18,123 @@
 
   <body>
 
-    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.php">Start Bootstrap</a>
+    <!-- NAVBAR
+    ================================================== -->
+    <!-- Wrap the .navbar in .container to center it on the page and provide easy way to target it with .navbar-wrapper. -->
+    <!--<div class="outernav">-->
+      <div class="container">
+        <nav class="navbar navbar-default"> <!-- extra class for inverted colour nav on homepage -->
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav pull-right">
+                <li><a href="./#sdk">SDK</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </nav><!-- /.navbar -->
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container -->
-    </nav>
-
-    <div class="full-width-image-1">
-
-      <div class="logo-wrapper">
-        <img class="img-responsive" src="http://placehold.it/200x200&text=Logo" />
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active" id="carousel-slide-01">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Helga 2013</h1>
+              <p class="lead">Developers: add eye-powered gesture controls to any app using the Fixational SDK.</p>
+              <a class="btn btn-large btn-happy" href="#sdk">How it works</a>
+            </div>
+          </div>
+        </div>
+        <div class="item" id="carousel-slide-02">
+          <!--<div class="pickoftheday">
+            <a href="http://thenextweb.com/apps/2012/09/03/wink-camera/" target="_blank">
+              <img src="img/TNW-PickOfTheDay.png" alt="TNW pick of the day"/>
+            </a>
+          </div>-->
+          <div class="container">
+            <div class="carousel-caption" id="winkcamera-caption">
+              <h1>Wink. Smile. Snap!</h1>
+              <p class="lead">Wink Camera lets you capture photos with the wink of an eye.</p>
+              <a class="btn btn-large btn-happy" href="#winkcamera" onclick="play()" ><i class="icon-play-circle" id="vidplayicon"></i>Play video</a>
+              <!--<a class="btn btn-large btn-happy" data-toggle="modal" href="#youTubeModal" ><i class="icon-play-circle" id="vidplayicon"></i>Play video</a>
+              <div class="modal hide" id="youTubeModal">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">×</button>
+                  <h3>Wink Camera - Download on the App Store</h3>
+                </div>
+                <div class="modal-body" id="youTubeModalBody">
+                  <iframe width="853" height="480" src="http://www.youtube.com/embed/eYFY7THlMIY" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="modal-footer">
+                  <a href="#" class="btn" data-dismiss="modal">Close</a>
+                </div>
+              </div>​-->
+              <div>
+                <a href="http://itunes.com/apps/winkcamera" target="_blank">
+                  <img class="appstorebutton" src="img/Download_on_the_App_Store_Badge_US-UK_135x40_0801.png" alt="Download on the App Store"/>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item" id="carousel-slide-03">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Handsfree reading</h1>
+              <p class="lead">Read your ebooks without having to touch the screen. Great for reading while your hands are busy.</p>
+              <a class="btn btn-large btn-happy" href="./#winkreader">Find out more</a>
+            </div>
+          </div>
+        </div>
       </div>
-
-    </div><!-- /full-width-image-1 -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+    </div><!-- /.carousel -->
 
     {% block content %}
     <h1>No content block!</h1>
     {% endblock content %}
 
-    <!-- FOOTER -->
-    <div class="container">
-      <footer>
-      <div class="row">
-        <div class="col-lg-12">
-          Copyright &copy; Company 2013 &middot; Facebook &middot; Twitter &middot; Google+
-        </div>
-      </div>
-      </footer>
-    </div>
+    <div class="footer">
+      <!-- footer container -->
+      <div class="container" id="footer-container">
+        <div class="row" id="footerrow">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-2">
+            <!--<h6>News</h6>
+            <ul>
+              <li><a href="news.html">In The News</a></li>
+              <li><a href="http://blog.fixational.com">Blog</a></li>
+            </ul>-->
+          </div>
+          <div class="col-md-2">
+            <h6>Connect</h6>
+            <ul>
+              <a href="https://twitter.com/helga2k13" class="twitter-follow-button" data-show-count="false">Follow @helga2k13</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </ul>
+          </div>
+        </div> <!-- end footer row -->
+        <p class="muted footersubtext"><small>© 2012 Fixational Ltd. Registered in Ireland #490184.<br>Made in Galway, Ireland.</small> <img src="img/ireland.png" class="irelandmap" alt="Map of Ireland"/></p>
+      </div> <!-- end footer container -->
+    </div> <!-- end footer -->
+    
+    <!-- javascript -->
+    <script src="{% static "js/jquery-1.10.2.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
 
-  </div><!-- /container -->
-
-  <!-- javascript -->
-  <script src="{% static "js/jquery-1.10.2.min.js" %}"></script>
-  <script src="{% static "js/bootstrap.js" %}"></script>
-
-</body>
+  </body>
 
 </html>
