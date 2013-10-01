@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from datetime import datetime
+from snapp.models import Snap
 import time
 
 def index(request):
@@ -12,7 +13,10 @@ def index(request):
     start = time.mktime(start.timetuple())
     end   = time.mktime(end.timetuple())
 
-    return render(request, 'landingpage/index.html',
-            {'progress': 100 * (1 - (end - now) / (end - start))}
-    )
+    snaps = Snap.objects.order_by('-downloaded')
+
+    return render(request, 'landingpage/index.html', {
+        'progress': 100 * (1 - (end - now) / (end - start)),
+        'snaps': snaps,
+        })
 

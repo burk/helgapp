@@ -17,5 +17,16 @@
   </div>
 </div>
 
+<div class="row marketing">
+  <p>Send en <em>Snap</em> til <em>helga2k13</em> og vis hvor gira du er!</p>
+  {% if snaps %}
+  <div class="snapcarousel">
+    {% for snap in snaps %}
+    <img src="/snaps/{{ snap.filename }}" />
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+
 {% endblock content %}
 
