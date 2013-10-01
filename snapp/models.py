@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+class Snap(models.Model):
+    filename = models.CharField()
+    downloaded = models.DateTimeField('date downloaded')
+
