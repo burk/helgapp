@@ -17,14 +17,13 @@
   </div>
 </div>
 
-<div class="row marketing">
-  <p>Send en <em>Snap</em> til <em>helga2k13</em> og vis hvor gira du er!</p>
+<div class="row marketing snapcarousel">
+  <h2>Send en <em>Snap</em> til <em>helga2k13</em> og vis hvor gira du er!</h2>
   {% if snaps %}
-  <div class="snapcarousel">
     {% for snap in snaps %}
-    <img src="/snaps/{{ snap.filename }}" />
+    <img class="img-rounded" src="/snaps/{{ snap.filename }}" height="300" />
     {% endfor %}
-  </div>
+  <div class="clearfix"></div>
   {% endif %}
 </div>
 
