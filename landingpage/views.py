@@ -13,7 +13,7 @@ def index(request):
     start = time.mktime(start.timetuple())
     end   = time.mktime(end.timetuple())
 
-    snaps = Snap.objects.order_by('-downloaded')
+    snaps = Snap.objects.filter(censored=False).order_by('-downloaded')
 
     return render(request, 'landingpage/index.html', {
         'progress': 100 * (1 - (end - now) / (end - start)),
