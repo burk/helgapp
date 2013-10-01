@@ -2,6 +2,6 @@
 *.pot
 *.pyc
 .DS_Store
-settings.py
-local_settings.py
+helgapp/settings.py
+helgapp/local_settings.py
 db.sqlite3
