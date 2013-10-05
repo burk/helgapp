@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from datetime import datetime
 from snapp.models import Snap
+import random
 import time
 
 def index(request):
@@ -15,7 +16,15 @@ def index(request):
 
     snaps = Snap.objects.filter(censored=False).order_by('-downloaded')
 
+    progress_text = random.choice([
+            'Reticulating splines',
+            'Herding llamas',
+            'Precaching resources',
+            'Loading...',
+            ])
+
     return render(request, 'landingpage/index.html', {
+        'progress_text': progress_text,
         'progress': 100 * (1 - (end - now) / (end - start)),
         'snaps': snaps,
         })
