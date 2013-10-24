@@ -5,16 +5,13 @@ import random
 import time
 
 def index(request):
-    fmt = '%Y-%m-%d %H:%M:%S'
-    now   = datetime.now()
-    start = datetime.strptime('2013-10-01 12:00:00', fmt)
-    end   = datetime.strptime('2013-10-09 12:00:00', fmt)
+    goal = 150
 
-    now   = time.mktime(now.timetuple())
-    start = time.mktime(start.timetuple())
-    end   = time.mktime(end.timetuple())
+    left, right = Snap.objects.order_by('?')[0:2]
 
-    snaps = Snap.objects.filter(censored=False).order_by('-downloaded')
+    snaps = Snap.objects.filter(censored=False).order_by('-downloaded')[:10]
+
+    count = Snap.objects.count()
 
     progress_text = random.choice([
             'Reticulating splines',
@@ -25,7 +22,9 @@ def index(request):
 
     return render(request, 'landingpage/index.html', {
         'progress_text': progress_text,
-        'progress': 100 * (1 - (end - now) / (end - start)),
+        'progress': 100 * float(count) / float(goal),
         'snaps': snaps,
+        'snap_left': left,
+        'snap_right': right,
         })
 

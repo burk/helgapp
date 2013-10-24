@@ -8,4 +8,5 @@ class Application(models.Model):
     title = models.CharField(max_length=128)
     leader = models.IntegerField()
     about = models.TextField()
+    accepted = models.NullBooleanField(null=True)
 

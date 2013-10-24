@@ -18,4 +18,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^sok/', include('sok.urls')),
+    url(r'^snapp/', include('snapp.urls')),
 )
