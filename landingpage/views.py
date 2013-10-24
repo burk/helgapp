@@ -9,7 +9,7 @@ def index(request):
 
     left, right = Snap.objects.filter(censored=False).order_by('?')[0:2]
 
-    snaps = Snap.objects.filter(censored=False).order_by('-downloaded')
+    snaps = Snap.objects.filter(censored=False).order_by('-downloaded')[:10]
 
     count = Snap.objects.count()
 
