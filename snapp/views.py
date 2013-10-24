@@ -3,7 +3,7 @@ from snapp.models import Snap
 from django.http import HttpResponseRedirect
 
 def rate(request):
-    k = 32
+    k = 64
 
     win_name = request.POST.get("win", "")
     lose_name = request.POST.get("lose", "")

@@ -21,20 +21,20 @@
 <div class="row marketing snapcarousel">
   <h2>SNAPMASH</h2>
   <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6" style="text-align: center">
         <form method="post" action="{% url 'rate_snap' %}" id="left_form">
           {% csrf_token %}
           <input type="hidden" name="win" value="{{ snap_left.filename }}" />
           <input type="hidden" name="lose" value="{{ snap_right.filename }}" />
-          <a href="#" onclick="document.getElementById('left_form').submit();"><img class="img-rounded" src="/snaps/{{ left_snap.filename }}" height="500" /></a>
+          <a href="#" onclick="document.getElementById('left_form').submit();"><img class="img-rounded" src="/snaps/{{ snap_left.filename }}" height="500" /></a>
         </form>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6" style="text-align: center">
         <form method="post" action="{% url 'rate_snap' %}" id="right_form">
           {% csrf_token %}
           <input type="hidden" name="win" value="{{ snap_right.filename }}" />
           <input type="hidden" name="lose" value="{{ snap_left.filename }}" />
-          <a href="#" onclick="document.getElementById('right_form').submit();"><img class="img-rounded" src="/snaps/{{ right_snap.filename }}" height="500" /></a>
+          <a href="#" onclick="document.getElementById('right_form').submit();"><img class="img-rounded" src="/snaps/{{ snap_right.filename }}" height="500" /></a>
         </form>
       </div>
     </form>

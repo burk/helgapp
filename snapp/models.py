@@ -5,5 +5,5 @@ class Snap(models.Model):
     username = models.CharField(max_length=128)
     downloaded = models.DateTimeField(auto_now_add=True)
     censored = models.BooleanField(default=False)
-    rating  = models.IntegerField()
+    rating  = models.IntegerField(default=1200)
 

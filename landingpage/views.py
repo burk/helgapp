@@ -7,9 +7,9 @@ import time
 def index(request):
     goal = 150
 
-    left, right = Snap.objects.order_by('?')[0:2]
+    left, right = Snap.objects.filter(censored=False).order_by('?')[0:2]
 
-    snaps = Snap.objects.filter(censored=False).order_by('-downloaded')[:10]
+    snaps = Snap.objects.filter(censored=False).order_by('-downloaded')
 
     count = Snap.objects.count()
 
